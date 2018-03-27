@@ -23,13 +23,13 @@ PORT = 'usb'
 AVRDUDE = 'avrdude'
 OBJCOPY = 'avr-objcopy'
 MCU = 'atmega16m1'
-PART = 'm16m1'
+PART = 'm16'
 F_CPU = '4000000UL'
 COMPILER = 'gnu99'
 FUSE = '0x62'
 
 CFLAGS = '-Os -g -mmcu=' + MCU + ' -std=' + COMPILER + ' -Wall -Werror -ff'
-LDFLAG = '-mmcu=' + MCU + ' -lm -std=c99'
+LDFLAG = '-mmcu=' + MCU + ' -lm -std=' + COMPILER
 AVRFLAGS = '-p -B2 ' + MCU + ' -v -c ' + PROGRAMMER + ' -p ' + PART
 
 possible_boards = []
